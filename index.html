@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biodata.html">Biodata</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="comments.html">Comments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Flash Animation Welcome Text outside the Container -->
+   <section class="introduction">
+    <div class="flash-welcome">
+        <h1>
+            <span class="letter W">W</span>
+            <span class="letter E">E</span>
+            <span class="letter L">L</span>
+            <span class="letter C">C</span>
+            <span class="letter O">O</span>
+            <span class="letter M">M</span>
+            <span class="letter E">E</span>
+        </h1>
+    <div class="intro-text">
+        <p>My name is Nur Maizatul Ain, aka <b>Maei.</b> I am a third year student of <b>Multimedia Technology</b> in University Malaysia Sabah Labuan International Campus <b>(UMSLIC).</b> This page is all about me.</p>
+    </div>
+</section>
+
+<script>
+    // Wait for the page to load
+    window.onload = function() {
+        const letters = document.querySelectorAll('.letter');
+
+        // Add a delay to trigger the animation after page load
+        letters.forEach((letter, index) => {
+            letter.style.animationDelay = `${index * 0.2}s`;
+            letter.classList.add('animate'); // Add a class to trigger CSS animation
+        });
+    };
+</script>
+
+        </div>
+        </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 by Maei. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

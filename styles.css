@@ -1,0 +1,528 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f5e9;
+    color: #424242;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+nav {
+    background-color: #424242; 
+    padding: 20px 0; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: none; 
+    color: #a5c8e5;
+}
+
+/* Flash Animation: Welcome */
+.flash-welcome {
+    text-align: center;
+    padding: 0; 
+    margin: 0; 
+    width: 100%; 
+}
+
+/* Introduction Section */
+.introduction {
+    padding: 100px 0; /* Adjust padding to have uniform space on top and bottom */
+    background-image: url('images/home-bg.jpg');
+    background-size: cover; /* Ensure the background image covers the whole section */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    margin: 0; /* Remove margin to avoid misalignment */
+    width: 100%; /* Set width to 100% to ensure it spans across */
+    border-radius: 0; /* Remove border-radius if unnecessary for the background */
+    text-align: left;
+    position: relative;
+}
+
+/* Container - introduction content */
+.introduction-container {
+    background-color: #a5d6a7;
+    padding: 30px;
+    border: 2px solid #81c784;
+    border-radius: 10px;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 1.5em; /* Increase font size by 1x */
+}
+
+/* Additional styling to enlarge the text inside <p> */
+.introduction-container p {
+    font-size: 1.5em; /* Increase the text size by 1x */
+}
+
+
+/* Flash Animation: Welcome */
+.flash-welcome {
+    text-align: center;
+    padding: 0; 
+    margin: 0; 
+    width: 100%; 
+}
+
+/* Flash welcome text */
+.flash-welcome h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem !important; /* Adjusted font size */
+    font-weight: 900; /* Bold for emphasis */
+    color: #6c98b6; /* Soft blue tone */
+    text-transform: uppercase;
+    letter-spacing: 15px; /* Increased spacing for better visibility */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+/* Animation for each letter */
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+/* Class added to letters to trigger the animation */
+.letter.animate {
+    animation: slideIn 2s ease-out forwards, glowEffect 1.5s infinite alternate;
+}
+
+.letter:nth-child(1) {
+    animation-delay: 0s;
+}
+.letter:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.letter:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.letter:nth-child(4) {
+    animation-delay: 0.6s;
+}
+.letter:nth-child(5) {
+    animation-delay: 0.8s;
+}
+.letter:nth-child(6) {
+    animation-delay: 1s;
+}
+.letter:nth-child(7) {
+    animation-delay: 1.2s;
+}
+
+/* Sliding from the sides animation */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100px) rotate(0deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateX(50px) rotate(10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+/* Glowing and Color Changing Effect */
+@keyframes glowEffect {
+    0% {
+        text-shadow: 0 0 15px #6c98b6, 0 0 25px #6c98b6;
+        color: #6c98b6; /* Soft blue tone */
+    }
+    25% {
+        text-shadow: 0 0 25px #9faec9, 0 0 35px #9faec9;
+        color: #9faec9; /* Soft lavender */
+    }
+    50% {
+        text-shadow: 0 0 35px #b4d7a1, 0 0 45px #b4d7a1;
+        color: #b4d7a1; /* Soft pastel green */
+    }
+    75% {
+        text-shadow: 0 0 45px #9faec9, 0 0 55px #9faec9;
+        color: #9faec9; /* Soft lavender */
+    }
+    100% {
+        text-shadow: 0 0 15px #6c98b6, 0 0 25px #6c98b6;
+        color: #6c98b6; /* Soft blue tone */
+    }
+}
+
+/* Hover effect - text will come together, glow, and scale up without stopping the animation */
+.flash-welcome h1:hover .letter {
+    transform: scale(1.3);
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.7), 0 0 60px rgba(255, 255, 255, 0.7);
+    color: #ffffff;
+}
+
+/* Ensure no disappearing behavior */
+.flash-welcome h1:active .letter {
+    animation: none; /* Prevents animation from stopping */
+    color: #6c98b6; /* Restores original color */
+    text-shadow: 0 0 15px #6c98b6, 0 0 25px #6c98b6; /* Restores glow */
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablet (768px to 1024px) */
+@media (max-width: 1024px) {
+    .flash-welcome h1 {
+        font-size: 4rem !important; /* Adjust size for tablets */
+    }
+}
+
+/* For mobile (up to 768px) */
+@media (max-width: 768px) {
+    .flash-welcome h1 {
+        font-size: 3rem !important; /* Adjust size for mobile devices */
+    }
+}
+
+
+
+/* Biodata Section */
+.biodata {
+    text-align: center;
+    padding: 0px;
+    margin: 0px auto;
+    width: 100;
+    border-radius: 0px;
+    background-image: url('images/biodata-bg.jpg'); /* Set background image */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    color: #fff; 
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Add overlay for better text visibility */
+.biodata::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    z-index: -1; /* Ensures overlay stays behind content */
+}
+
+.photo-frame {
+    margin: 0 auto;
+    width: 150px;
+    height: 200px;
+    border-radius: 50%; /* Makes the frame oval */
+    overflow: hidden;
+    border: 5px solid #81c784; /* Adds a green border for appeal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    background-color: #ffffff; /* Adds a white background */
+}
+
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+table {
+    margin: 20px auto;
+    width: 80%;
+    border-collapse: separate; /* Allows for border-spacing */
+    border-spacing: 0; /* Removes space between cells */
+    border-radius: 10px; /* Rounds the edges of the table */
+    overflow: hidden; /* Ensures rounded corners work */
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+}
+
+table th, table td {
+    padding: 15px; /* Adds more spacing inside cells */
+    border-bottom: 1px solid #e0e0e0; /* Adds light separators between rows */
+}
+
+table th {
+    background-color: #81c784; /* Green background for headers */
+    color: white; /* White text for headers */
+    font-weight: bold;
+    text-align: right;
+    font-size: 1rem;
+}
+
+table td {
+    background-color: #f1f8e9; /* Light pastel green for data cells */
+    color: #424242; /* Dark grey text */
+    font-size: 0.95rem;
+}
+
+table tr:hover td {
+    background-color: #dcedc8; /* Slightly darker pastel green on hover */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+
+
+
+/* Portfolio Section */
+.portfolio {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #c8e6c9; /* Light pastel green */
+    color: #424242; /* Dark grey */
+    width: 90%; /* Keep the width at 90% */
+    max-width: 1200px; /* Optional: Add a maximum width for larger screens */
+    border-radius: 10px;
+    text-align: center;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Set to 2 columns */
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.portfolio-item {
+    background-color: #e8f5e9; /* Light pastel green */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Stack the image, heading, and text vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center the text */
+    justify-content: center;
+}
+
+.portfolio-item h3 {
+    margin: 10px 0; /* Space around the heading */
+    color: #424242; /* Dark grey */
+}
+
+.portfolio-item p {
+    margin: 0 0 10px;
+    color: #424242; /* Dark grey */
+}
+
+.portfolio-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    max-width: 400px; /* Increased from 300px to make images 1x larger */
+    display: block;
+}
+
+/* Video Section */
+.video-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #c8e6c9; /* Light pastel green */
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.video-container {
+    margin: 20px auto;
+    max-width: 560px;
+}
+
+iframe {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Skills and Interests Section */
+.skills-interests {
+    text-align: center;
+    padding: 20px;
+    background-color: #c8e6c9; 
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skill {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+}
+
+.skill i {
+    font-size: 40px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.skill h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.skill p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Content Section for Comments */
+.content {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #c8e6c9; /* Light pastel green */
+    color: #424242; /* Dark grey */
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for a "boxed" effect */
+    text-align: left;
+}
+
+
+/* Content Section for Comments */
+.content {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #c8e6c9; /* Light pastel green */
+    color: #424242; /* Dark grey */
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for a "boxed" effect */
+    text-align: left;
+}
+
+/* Content Section for Comments */
+.content {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #c8e6c9; /* Light pastel green */
+    color: #424242; /* Dark grey */
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for a "boxed" effect */
+    text-align: left;
+}
+
+/* Comment Form */
+.content {
+    padding: 15px; /* Reduced padding */
+    margin: 20px auto;
+    background-color: #c8e6c9; /* Light pastel green */
+    color: #424242; /* Dark grey */
+    width: 60%; /* Reduced width of the container */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for a "boxed" effect */
+    text-align: center; /* Center text */
+}
+
+/* Form */
+.form {
+    max-width: 300px; /* Smaller form width */
+    margin: 0 auto; /* Centers the form */
+}
+
+/* Form Input Fields */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Ensure input fields span the full width of the container */
+    padding: 6px; /* Reduced padding */
+    font-size: 12px; /* Smaller font size */
+    margin-bottom: 8px; /* Reduced space between fields */
+}
+
+/* Button */
+button {
+    padding: 12px 18px; /* Increased button padding */
+    font-size: 16px; /* Larger font size */
+    cursor: pointer;
+    background-color: #4CAF50; /* Example background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Social Media Section */
+.social-links {
+    margin: 20px 0;
+    text-align: center; /* Center social media links */
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    color: #424242; /* Dark grey */
+    font-size: 1rem; /* Smaller font size for the text */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.social-links a:hover {
+    color: #2e7d32; /* Dark green */
+}
+
+.social-links i {
+    margin-right: 8px; /* Space between the icon and the text */
+    font-size: 1.2rem; /* Smaller icon size */
+}
+
+/* Footer */
+footer {
+    background-color: #424242; /* Dark grey */
+    text-align: center;
+    padding: 40px 0; /* Doubled the padding to make the footer 2x larger */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+}
